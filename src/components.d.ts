@@ -12,23 +12,40 @@ import {
 } from '@stencil/router';
 
 export namespace Components {
+  interface AppHeader {}
   interface AppHome {}
+  interface AppPosts {}
   interface AppProfile {
     'match': MatchResults;
   }
-  interface AppRoot {}
+  interface AppRoot {
+    'test': string;
+  }
   interface AppTodos {
     'match': MatchResults;
   }
+  interface NavBar {}
 }
 
 declare global {
 
 
+  interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {}
+  var HTMLAppHeaderElement: {
+    prototype: HTMLAppHeaderElement;
+    new (): HTMLAppHeaderElement;
+  };
+
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
+  };
+
+  interface HTMLAppPostsElement extends Components.AppPosts, HTMLStencilElement {}
+  var HTMLAppPostsElement: {
+    prototype: HTMLAppPostsElement;
+    new (): HTMLAppPostsElement;
   };
 
   interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
@@ -48,29 +65,46 @@ declare global {
     prototype: HTMLAppTodosElement;
     new (): HTMLAppTodosElement;
   };
+
+  interface HTMLNavBarElement extends Components.NavBar, HTMLStencilElement {}
+  var HTMLNavBarElement: {
+    prototype: HTMLNavBarElement;
+    new (): HTMLNavBarElement;
+  };
   interface HTMLElementTagNameMap {
+    'app-header': HTMLAppHeaderElement;
     'app-home': HTMLAppHomeElement;
+    'app-posts': HTMLAppPostsElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'app-todos': HTMLAppTodosElement;
+    'nav-bar': HTMLNavBarElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface AppHeader {}
   interface AppHome {}
+  interface AppPosts {}
   interface AppProfile {
     'match'?: MatchResults;
   }
-  interface AppRoot {}
+  interface AppRoot {
+    'test'?: string;
+  }
   interface AppTodos {
     'match'?: MatchResults;
   }
+  interface NavBar {}
 
   interface IntrinsicElements {
+    'app-header': AppHeader;
     'app-home': AppHome;
+    'app-posts': AppPosts;
     'app-profile': AppProfile;
     'app-root': AppRoot;
     'app-todos': AppTodos;
+    'nav-bar': NavBar;
   }
 }
 
@@ -80,10 +114,13 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'app-header': LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+      'app-posts': LocalJSX.AppPosts & JSXBase.HTMLAttributes<HTMLAppPostsElement>;
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'app-todos': LocalJSX.AppTodos & JSXBase.HTMLAttributes<HTMLAppTodosElement>;
+      'nav-bar': LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
     }
   }
 }
