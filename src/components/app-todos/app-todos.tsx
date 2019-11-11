@@ -3,7 +3,7 @@ import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-todos',
-  styleUrl: 'app-todos.css',
+  styleUrl: 'app-todos.scss',
   shadow: true
 })
 export class AppTodos {

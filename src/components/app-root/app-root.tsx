@@ -1,20 +1,17 @@
-import { Component, h } from '@stencil/core';
-
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'app-root',
-  styleUrl: 'app-root.css',
   shadow: true
 })
 export class AppRoot {
 
+  @Prop() test = 'qq'
+
   render() {
     return (
       <div>
-        <header>
-          <h1>Stencil App Starter</h1>
-        </header>
-
+        <app-header />
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
