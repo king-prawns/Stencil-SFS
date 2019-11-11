@@ -1,0 +1,25 @@
+header {
+  background: #5851ff;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: white;
+    display: flex;
+    height: 83px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 50px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #fff;
+      margin: 0;
+      padding: 0 12px;
+    }
+  }
+}
