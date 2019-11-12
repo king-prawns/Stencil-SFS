@@ -33,5 +33,7 @@ declare global {
     userId: number
   }
   type Posts = Array<Post>
+  type Todo = any
+  type Todos = Array<Todo>
 }
 export { };

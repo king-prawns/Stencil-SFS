@@ -17,9 +17,9 @@ export class AppRoot {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='app-users' exact={true} />
-              <stencil-route url='/posts' component='app-posts' />
-              <stencil-route url='/user/:id' component='app-user' />
-              <stencil-route url='/user/:id/todos' component='app-todos' />
+              <stencil-route url='/posts' component='app-posts' exact={true} />
+              <stencil-route url='/user/:id' component='app-user' exact={true} />
+              <stencil-route url='/user/:id/todos' component='app-todos' exact={true} />
             </stencil-route-switch>
           </stencil-router>
         </main>

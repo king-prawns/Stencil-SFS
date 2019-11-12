@@ -1,2 +1,35 @@
 .app-todos {
+  button {
+    color: #fff;
+    background-color: #28a745;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid #28a745;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .title {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .todo {
+    margin-bottom: 5px;
+
+    .todo-input {
+      margin-right: 5px;
+    }
+  }
 }
