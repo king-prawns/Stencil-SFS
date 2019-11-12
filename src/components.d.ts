@@ -18,9 +18,7 @@ export namespace Components {
   interface AppRoot {
     'test': string;
   }
-  interface AppTodos {
-    'match': MatchResults;
-  }
+  interface AppTodos {}
   interface AppUser {
     'match': MatchResults;
   }
@@ -91,9 +89,7 @@ declare namespace LocalJSX {
   interface AppRoot {
     'test'?: string;
   }
-  interface AppTodos {
-    'match'?: MatchResults;
-  }
+  interface AppTodos {}
   interface AppUser {
     'match'?: MatchResults;
   }

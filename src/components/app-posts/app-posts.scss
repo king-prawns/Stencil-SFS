@@ -1,3 +1,35 @@
-:host {
-  display: block;
+.app-posts {
+  .card-post {
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+
+    .card-title {
+      margin: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .card-text {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
