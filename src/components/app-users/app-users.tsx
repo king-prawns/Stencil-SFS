@@ -19,7 +19,6 @@ export class AppUsers {
       .then((response: Response) => response.json())
       .then(response => {
         this.users = response;
-        console.log(this.users)
       });
   }
 
