@@ -58,10 +58,6 @@ $ json-server --watch db.json --port 4000
 
 - Go to [localhost:8080](http://localhost:8080/)
 
-## Features
-
-- components
-
 ## Conclusion
 
 This is just a simple example, I hope this will help you to understand better Stencil.
