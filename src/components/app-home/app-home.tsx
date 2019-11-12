@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
@@ -6,22 +6,42 @@ import { Component, h } from '@stencil/core';
   shadow: true
 })
 export class AppHome {
+  @State() users: Users = [];
+
+  handleUserClick(id: number){
+    console.log(id)
+  }
+
+  componentWillLoad() {
+    fetch('http://localhost:4000/users')
+      .then((response: Response) => response.json())
+      .then(response => {
+        this.users = response;
+        console.log(this.users)
+      });
+  }
 
   render() {
     return (
-      <div class='app-home'>
-        <p>
-          Welcome to the Stencil App Starter.
-          You can use this starter to build entire apps all with
-          web components using Stencil!
-          Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
-        </p>
-
-        <stencil-route-link url='/user/2'>
-          <button>
-            Profile page
-          </button>
-        </stencil-route-link>
+      <div class="app-home">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.users.map((user) =>
+              (<tr key={user.id} onClick={() => this.handleUserClick(user.id)}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+              </tr>)
+            )}
+          </tbody>
+        </table>
       </div>
     );
   }
