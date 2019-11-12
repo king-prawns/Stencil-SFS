@@ -2,11 +2,11 @@ import { Component, Prop, h } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
-  tag: 'app-profile',
-  styleUrl: 'app-profile.scss',
+  tag: 'app-user',
+  styleUrl: 'app-user.scss',
   shadow: true
 })
-export class AppProfile {
+export class AppUser {
   @Prop() match: MatchResults;
 
   normalize(id: string): string {
@@ -19,7 +19,7 @@ export class AppProfile {
   render() {
     if (this.match && this.match.params.id) {
       return (
-        <div class="app-profile">
+        <div class="app-user">
           <p>
             Hello! My name is {this.normalize(this.match.params.id)}. My name was passed in
             through a route param!

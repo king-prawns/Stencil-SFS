@@ -15,13 +15,13 @@ import {
 export namespace Components {
   interface AppHeader {}
   interface AppPosts {}
-  interface AppProfile {
-    'match': MatchResults;
-  }
   interface AppRoot {
     'test': string;
   }
   interface AppTodos {
+    'match': MatchResults;
+  }
+  interface AppUser {
     'match': MatchResults;
   }
   interface AppUsers {
@@ -45,12 +45,6 @@ declare global {
     new (): HTMLAppPostsElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
@@ -61,6 +55,12 @@ declare global {
   var HTMLAppTodosElement: {
     prototype: HTMLAppTodosElement;
     new (): HTMLAppTodosElement;
+  };
+
+  interface HTMLAppUserElement extends Components.AppUser, HTMLStencilElement {}
+  var HTMLAppUserElement: {
+    prototype: HTMLAppUserElement;
+    new (): HTMLAppUserElement;
   };
 
   interface HTMLAppUsersElement extends Components.AppUsers, HTMLStencilElement {}
@@ -77,9 +77,9 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-header': HTMLAppHeaderElement;
     'app-posts': HTMLAppPostsElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'app-todos': HTMLAppTodosElement;
+    'app-user': HTMLAppUserElement;
     'app-users': HTMLAppUsersElement;
     'nav-bar': HTMLNavBarElement;
   }
@@ -88,13 +88,13 @@ declare global {
 declare namespace LocalJSX {
   interface AppHeader {}
   interface AppPosts {}
-  interface AppProfile {
-    'match'?: MatchResults;
-  }
   interface AppRoot {
     'test'?: string;
   }
   interface AppTodos {
+    'match'?: MatchResults;
+  }
+  interface AppUser {
     'match'?: MatchResults;
   }
   interface AppUsers {
@@ -105,9 +105,9 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'app-header': AppHeader;
     'app-posts': AppPosts;
-    'app-profile': AppProfile;
     'app-root': AppRoot;
     'app-todos': AppTodos;
+    'app-user': AppUser;
     'app-users': AppUsers;
     'nav-bar': NavBar;
   }
@@ -121,9 +121,9 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-header': LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
       'app-posts': LocalJSX.AppPosts & JSXBase.HTMLAttributes<HTMLAppPostsElement>;
-      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'app-todos': LocalJSX.AppTodos & JSXBase.HTMLAttributes<HTMLAppTodosElement>;
+      'app-user': LocalJSX.AppUser & JSXBase.HTMLAttributes<HTMLAppUserElement>;
       'app-users': LocalJSX.AppUsers & JSXBase.HTMLAttributes<HTMLAppUsersElement>;
       'nav-bar': LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
     }
