@@ -1,4 +1,5 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-home',
@@ -6,10 +7,11 @@ import { Component, h, State } from '@stencil/core';
   shadow: true
 })
 export class AppHome {
+  @Prop() history: RouterHistory;
   @State() users: Users = [];
 
   handleUserClick(id: number){
-    console.log(id)
+    this.history.push(`/user/${id}`);
   }
 
   componentWillLoad() {

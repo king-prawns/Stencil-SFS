@@ -9,11 +9,14 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 export namespace Components {
   interface AppHeader {}
-  interface AppHome {}
+  interface AppHome {
+    'history': RouterHistory;
+  }
   interface AppPosts {}
   interface AppProfile {
     'match': MatchResults;
@@ -84,7 +87,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppHeader {}
-  interface AppHome {}
+  interface AppHome {
+    'history'?: RouterHistory;
+  }
   interface AppPosts {}
   interface AppProfile {
     'match'?: MatchResults;
