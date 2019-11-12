@@ -20,6 +20,7 @@ export class AppRoot {
               <stencil-route url='/posts' component='app-posts' exact={true} />
               <stencil-route url='/user/:id' component='app-user' exact={true} />
               <stencil-route url='/user/:id/todos' component='app-todos' exact={true} />
+              <stencil-route component="page-not-found" />
             </stencil-route-switch>
           </stencil-router>
         </main>

@@ -28,6 +28,7 @@ export namespace Components {
     'history': RouterHistory;
   }
   interface NavBar {}
+  interface PageNotFound {}
 }
 
 declare global {
@@ -74,6 +75,12 @@ declare global {
     prototype: HTMLNavBarElement;
     new (): HTMLNavBarElement;
   };
+
+  interface HTMLPageNotFoundElement extends Components.PageNotFound, HTMLStencilElement {}
+  var HTMLPageNotFoundElement: {
+    prototype: HTMLPageNotFoundElement;
+    new (): HTMLPageNotFoundElement;
+  };
   interface HTMLElementTagNameMap {
     'app-header': HTMLAppHeaderElement;
     'app-posts': HTMLAppPostsElement;
@@ -82,6 +89,7 @@ declare global {
     'app-user': HTMLAppUserElement;
     'app-users': HTMLAppUsersElement;
     'nav-bar': HTMLNavBarElement;
+    'page-not-found': HTMLPageNotFoundElement;
   }
 }
 
@@ -101,6 +109,7 @@ declare namespace LocalJSX {
     'history'?: RouterHistory;
   }
   interface NavBar {}
+  interface PageNotFound {}
 
   interface IntrinsicElements {
     'app-header': AppHeader;
@@ -110,6 +119,7 @@ declare namespace LocalJSX {
     'app-user': AppUser;
     'app-users': AppUsers;
     'nav-bar': NavBar;
+    'page-not-found': PageNotFound;
   }
 }
 
@@ -126,6 +136,7 @@ declare module "@stencil/core" {
       'app-user': LocalJSX.AppUser & JSXBase.HTMLAttributes<HTMLAppUserElement>;
       'app-users': LocalJSX.AppUsers & JSXBase.HTMLAttributes<HTMLAppUsersElement>;
       'nav-bar': LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
+      'page-not-found': LocalJSX.PageNotFound & JSXBase.HTMLAttributes<HTMLPageNotFoundElement>;
     }
   }
 }
