@@ -2,11 +2,11 @@ import { Component, h, Prop, State } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 @Component({
-  tag: 'app-home',
-  styleUrl: 'app-home.scss',
+  tag: 'app-users',
+  styleUrl: 'app-users.scss',
   shadow: true
 })
-export class AppHome {
+export class AppUsers {
   @Prop() history: RouterHistory;
   @State() users: Users = [];
 
@@ -25,7 +25,7 @@ export class AppHome {
 
   render() {
     return (
-      <div class="app-home">
+      <div class="app-users">
         <table class="table">
           <thead>
             <tr>
